@@ -11,9 +11,37 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="blocks.css"/>
     <link href="style.css" rel="stylesheet"/>
-    <title>Design of the Week Template 18 - Pinegrow Web Editor</title>
+    <style>
+      #overlay {
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+        cursor: pointer;
+      }
+      
+      #text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 50px;
+        color: white;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+      }
+      </style>    
+    <title>brag.charity - Digital Education and Safety Foundation</title>
   </head>
   <body class="text-muted">
+    <div id="overlay" onclick="off()">
+      <div id="text">Coming Soon!</div>
+    </div>
     <main>
       <section class="bg-secondary pb-5 position-relative poster pt-3 text-white-50">
         <div class="bg-secondary col-6 col-lg-4 col-md-5 h-100 position-absolute start-0 top-0"></div>

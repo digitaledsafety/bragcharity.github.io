@@ -1,37 +1,59 @@
 
 <section class="bg-opacity-10 bg-primary pb-5 pt-5"> 
-    <div class="container pb-5 pt-5">
-      <div class="align-items-center gy-2 mb-4 row">
-        <div class="col-md">
-          <h2 class="fw-bold h2 mb-0 text-capitalize text-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em" class="mb-2 me-2 text-primary">
-              <path d="M12 23a7.5 7.5 0 0 1-5.138-12.963C8.204 8.774 11.5 6.5 11 1.5c6 4 9 8 3 14 1 0 2.5 0 5-2.47.27.773.5 1.604.5 2.47A7.5 7.5 0 0 1 12 23z"/>
-            </svg><span>Hype Curations</span></h2>
-        </div>
-        <div class="col-md-auto">
-          <form> 
-            <div class="bg-opacity-75 bg-white border input-group overflow-hidden p-1 rounded-pill">
-              <input type="text" class="bg-transparent border-0 form-control pe-3 ps-3 shadow-none" placeholder="Find your next NFT" aria-describedby="button-addon2"/>
-              <button type="submit" class="bg-gradient btn btn-primary p-2 rounded-circle" aria-label="search">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em" class="d-block h-auto">
-                  <g>
-                    <path fill="none" d="M0 0h24v24H0z"></path>
-                    <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"></path>
-                  </g>
-                </svg>
-              </button>
-            </div>
-          </form>
-        </div>
+  <div class="container pb-5 pt-5">
+    <div class="align-items-center gy-2 mb-4 row">
+      <div class="col-md">
+        <h2 class="fw-bold h2 mb-0 text-capitalize text-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em" class="mb-2 me-2 text-primary">
+            <path d="M12 23a7.5 7.5 0 0 1-5.138-12.963C8.204 8.774 11.5 6.5 11 1.5c6 4 9 8 3 14 1 0 2.5 0 5-2.47.27.773.5 1.604.5 2.47A7.5 7.5 0 0 1 12 23z"/>
+          </svg><span>Hype Curations</span></h2>
       </div>
-      <div class="g-4 justify-content-center row row-cols-lg-3 row-cols-md-2"> 
-        {% for c in site.collectibles %}
-            {% if c.tags contains 'curation' %}
-                {{ c.content }}
-            {% endif %}            
-        {% endfor %}        
-      </div>           
-      
-      <div class="mt-5 text-center"><a href="https://opensea.io/digitaledsafety" class="bg-gradient btn btn-primary pb-2 pe-4 ps-4 pt-2">View More</a>
-      </div>           
-    </div>         
-  </section>
+      <div class="col-md-auto">
+        <!--<form> 
+          <div class="bg-opacity-75 bg-white border input-group overflow-hidden p-1 rounded-pill">
+            <input type="text" class="bg-transparent border-0 form-control pe-3 ps-3 shadow-none" placeholder="Find your next NFT" aria-describedby="button-addon2"/>
+            <button type="submit" class="bg-gradient btn btn-primary p-2 rounded-circle" aria-label="search">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.25em" height="1.25em" class="d-block h-auto">
+                <g>
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z"></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+        </form>-->
+      </div>
+    </div>
+    <div class="g-4 justify-content-center row row-cols-lg-3 row-cols-md-2"> 
+      {% for c in site.collectibles %}
+          {% if c.tags contains 'curation' %}
+
+          <div> 
+              <div class="bg-gradient bg-opacity-75 bg-white overflow-hidden rounded-1"> 
+              <div class="position-relative">
+                  <a href="{{ c.collectible_url }}"><img src="{{ c.image }}" class="img-fluid w-100" alt="..." width="480" height="360"/></a>
+              </div>
+              <div class="p-3 p-sm-4 pb-4 pe-3 pe-sm-4 ps-3 ps-sm-4 pt-4">
+                  <div class="align-items-center d-flex justify-content-between">
+                  <div>
+                      <h3 class="fw-bold h5 mb-0"><a href="{{ c.collectible_url }}" class="link-secondary text-decoration-none">{{ c.title }}</a></h3>
+                  </div>
+                  <div><a href="#" aria-label="Add to favorite" class="link-secondary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="2em" height="2em" class="d-block">
+                          <path d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228zm6.826 1.641c-1.5-1.502-3.92-1.563-5.49-.153l-1.335 1.198-1.336-1.197c-1.575-1.412-3.99-1.35-5.494.154-1.49 1.49-1.565 3.875-.192 5.451L12 18.654l7.02-7.03c1.374-1.577 1.299-3.959-.193-5.454z"/>
+                      </svg></a>
+                  </div>
+                  </div>
+                  <hr/>
+                  <div class="align-items-center d-flex justify-content-between">
+                  <div><a class="align-items-center d-inline-flex fst-italic gap-2 small text-decoration-none" href="{{ c.creator_url }}"><img src="{{ c.creator_image }}" class="border border-3 border-secondary rounded-circle" width="36" height="36" alt="Author image"/><span class="text-muted">Created by {{ c.creator_name }}</span></a>
+                  </div>
+                  </div>
+              </div>                 
+              </div>               
+          </div>
+          {% endif %}            
+      {% endfor %}        
+    </div>           
+    
+    <!--<div class="mt-5 text-center"><a href="https://opensea.io/digitaledsafety" class="bg-gradient btn btn-primary pb-2 pe-4 ps-4 pt-2">View More</a></div>-->           
+  </div>         
+</section>

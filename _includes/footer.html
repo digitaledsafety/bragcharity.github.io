@@ -90,6 +90,23 @@
   <script src="assets/js/popper.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
   <script>
+    /* To connect using MetaMask */
+    async function connect() {
+      if (window.ethereum) {
+         await window.ethereum.request({ method: "eth_requestAccounts" });
+         window.web3 = new Web3(window.ethereum);
+         const account = web3.eth.accounts;
+         //Get the current MetaMask selected/active wallet
+         const walletAddress = account.givenProvider.selectedAddress;
+         console.log(`Wallet: ${walletAddress}`);
+         document.getElementById('connect').innerHTML = walletAddress.slice(0, 13) + '&hellip;';
+      
+      } else {
+       console.log("No wallet");
+      }
+    }
+    </script>
+  <script>
     var form = document.getElementById("newsletter-form");
     
     async function handleSubmit(event) {

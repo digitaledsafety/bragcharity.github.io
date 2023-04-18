@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
   {%- include head.html -%}
-
   <body>
-
-    <div id="overlay" onclick="off()">
-        <div id="text">Coming Soon!</div>
-    </div>
     <main>
+        <section class="bg-secondary pb-5 position-relative poster pt-3 text-white-50">
+        {%- include nav.html -%}
         {{ content }}
+        </section>
     </main>
-
     {%- include footer.html -%}
-
   </body>
-
 </html>

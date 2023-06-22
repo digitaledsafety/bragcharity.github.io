@@ -1,0 +1,13 @@
+
+<section> 
+  <div class="container">
+    <h1>Discussions</h1>
+    {% for c in site.discussions %}
+    <div class="align-items-center gy-2 mb-4 row">
+      <div class="col-md">       
+        <a href="{{ site.baseurl }}{{ c.id }}"><h3>{{ c.title }}</h3></a>
+      </div>
+    </div>  
+    {% endfor %}   
+  </div>
+</section>

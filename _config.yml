@@ -22,6 +22,8 @@ plugins:
 
 collections:
   collectibles:
+  discussions:
+    output: true
 
 minima:
   # Minima date format.

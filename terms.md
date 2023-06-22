@@ -1,14 +1,8 @@
 ---
-#
-# By default, content added below the "---" mark will appear in the home page
-# between the top bar and the list of recent posts.
-# To change the home page layout, edit the _layouts/home.html file.
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
 layout: page
 ---
 
-<h2>Terms and Conditions</h2>
+<h2 class="section-heading text-uppercase">Terms and Conditions</h2>
  
 <h4>Agreement between User and https://brag.charity</h4>
 <p>Welcome to https://brag.charity. The https://brag.charity website (the "Site") is comprised of various web pages operated by brag.charity a Digital Education and Safety Foundation Inc. Property ("brag.charity"). https://brag.charity is offered to you conditioned on your acceptance without modification of the terms, conditions, and notices contained herein (the "Terms"). Your use of https://brag.charity constitutes your agreement to all such Terms. Please read these terms carefully, and keep a copy of them for your reference.</p>

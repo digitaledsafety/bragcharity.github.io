@@ -5,7 +5,7 @@
           <h2 class="fw-bold h4 mb-3 text-white">Join the movement, stay updated</h2>
           <form id="newsletter-form" action="https://formspree.io/f/xeqdoyjj" method="POST"> 
             <div class="bg-white border input-group p-1 rounded-pill">
-              <input type="email" id="email" class="border-0 form-control pe-3 ps-3 shadow-none" placeholder="Enter email..." aria-label="Recipient's email" aria-describedby="button-addon2" required/>
+              <input type="email" id="email" name="email" class="border-0 form-control pe-3 ps-3 shadow-none" placeholder="Enter email..." aria-label="Recipient's email" aria-describedby="button-addon2" required/>
               <button class="bg-gradient btn btn-primary pb-2 pe-4 ps-4 pt-2 rounded-pill" id="button-addon2" aria-label="submit">
                 Sign Up
 </button>
@@ -94,6 +94,7 @@
       event.preventDefault();
       var status = document.getElementById("my-form-status");
       var data = new FormData(event.target);
+      console.log(data);
       fetch(event.target.action, {
         method: form.method,
         body: data,

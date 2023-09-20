@@ -44,7 +44,16 @@
                     </div>
                     <hr/>
                     <div class="align-items-center d-flex justify-content-between">
-                    <div><a class="align-items-center d-inline-flex fst-italic gap-2 small text-decoration-none" href="{{ c.creator_url }}"><img src="{{ c.creator_image }}" class="border border-3 border-secondary rounded-circle" width="36" height="36" alt="Author image"/><span class="text-muted">Created by {{ c.creator_name }}</span></a>
+                    <div><a class="align-items-center d-inline-flex fst-italic gap-2 small text-decoration-none" href="{{ c.creator_url }}"><img src="{{ c.creator_image }}" class="border border-3 border-secondary rounded-circle" width="36" height="36" alt="Author image"/>
+                      
+                      {% if c.creator %}
+                      <span class="text-muted">Created by {{ c.creator_name }}</span>
+                      {% else %}
+                      <span class="text-muted">Owned by {{ c.creator_name }}</span>
+                      {% endif %}
+                  
+                    
+                    </a>
                     </div>
                     </div>
                 </div>                 

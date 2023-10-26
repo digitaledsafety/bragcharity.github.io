@@ -26,8 +26,10 @@
       </div>
       <hr class="mb-4 mt-4"/>
       <div class="row"> 
-        <div class="col-xl-4 py-3"> <a class="align-items-center d-inline-flex fs-2 fw-bold gap-2 link-light mb-4 text-decoration-none text-uppercase" href="#"> <span class=" text-uppercase"><img src="{{ site.baseurl }}/assets/images/logo-brag2.png" height="275"></span></a> 
-          <p class="fw-light mb-3">brag.charity is dedicated to making a difference in the lives of those in need through our passionate and impactful initiatives. With your support, we can create positive change and empower communities to thrive. Join us in our mission to make a lasting impact and be a part of something truly meaningful.</p> 
+        <div class="col-xl-4 py-3">
+          <a class="align-items-center d-inline-flex fs-2 fw-bold gap-2 link-light mb-4 text-decoration-none text-uppercase" href="#"> 
+            <span class="text-uppercase"><img src="{{ site.baseurl }}/assets/images/logo-brag2.png" height="250"></span>
+          </a> 
         </div>           
         <div class="col-lg-8 col-sm-12 col-xl-4 py-6"> 
           <h2 class="fw-bold h5 mb-4 text-primary">Marketplace</h2> 
@@ -41,18 +43,14 @@
         <div class="col-lg-4 py-3"> 
           <h2 class="fw-bold h5 mb-4 text-primary">Recent Drops</h2> 
           <div class="g-3 row row-cols-2 row-cols-sm-3"> 
-            <div><a href="#" class="d-block"><img src="{{ site.baseurl }}/assets/images/nft-1.png" class="img-fluid rounded-1 w-100" width="300" height="250" alt="..."/></a>
+
+            {% for c in site.collectibles %}
+            {% if c.tags contains 'creation' %}
+            <div><a href="{{ site.baseurl }}{{ c.collectible_url }}" class="d-block"><img src="{{ site.baseurl }}{{ c.image }}" class="img-fluid rounded-1 w-100" width="300" height="250" alt="..."/></a>
             </div>
-            <div><a href="#" class="d-block"><img src="{{ site.baseurl }}/assets/images/nft-2.png" class="img-fluid rounded-1 w-100" width="300" height="250" alt="..."/></a>
-            </div>
-            <div><a href="#" class="d-block"><img src="{{ site.baseurl }}/assets/images/nft-3.png" class="img-fluid rounded-1 w-100" width="300" height="250" alt="..."/></a>
-            </div>
-            <div><a href="#" class="d-block"><img src="{{ site.baseurl }}/assets/images/nft-4.png" class="img-fluid rounded-1 w-100" width="300" height="250" alt="..."/></a>
-            </div>
-            <div><a href="#" class="d-block"><img src="{{ site.baseurl }}/assets/images/nft-5.png" class="img-fluid rounded-1 w-100" width="300" height="250" alt="..."/></a>
-            </div>
-            <div><a href="#" class="d-block"><img src="{{ site.baseurl }}/assets/images/nft-6.png" class="img-fluid rounded-1 w-100" width="300" height="250" alt="..."/></a>
-            </div>               
+          
+            {% endif %}            
+            {% endfor %}                  
           </div>             
         </div>           
       </div>         
